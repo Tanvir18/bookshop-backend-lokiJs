@@ -62,6 +62,7 @@ The backend service should now be running on http://localhost:3000.
 API Endpoints
 1. Register a Book
 URL: POST /api/books/register
+
 Payload:
 
 ```json
@@ -71,7 +72,9 @@ Payload:
   "stock": 10
 }
 ```
+
 Response:
+
 ```json
 {
   "id": "unique-id",
@@ -83,6 +86,7 @@ Response:
 
 2. Get All Books
 URL: GET /api/books
+
 Response:
 
 ```json
@@ -97,6 +101,7 @@ Response:
 ```
 3. Get a specific book.
 URL: GET /api/books/:id
+
 Response:
 
 ```json
@@ -111,6 +116,7 @@ Response:
 
 4. Update a Book
 URL: PUT /api/books/:id
+
 Payload:
 
 ```json
@@ -118,6 +124,7 @@ Payload:
   "stock": 15
 }
 ```
+
 Response:
 
 ```json
@@ -130,6 +137,7 @@ Response:
 ```
 5. Buy a Book
 URL: POST /api/books/buy/:id
+
 Payload:
 
 ```json
@@ -137,6 +145,7 @@ Payload:
   "quantity": 2
 }
 ```
+
 Response:
 
 ```json
@@ -171,6 +180,7 @@ For development, use nodemon for hot-reloading:
 npm install --save-dev nodemon
 ```
 Run with:
+
 ```bash
 npm run dev
 ```
