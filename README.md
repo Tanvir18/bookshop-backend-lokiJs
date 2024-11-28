@@ -22,14 +22,27 @@ A simple Node.js backend for a bookshop application using LokiJS as an in-memory
    git clone https://github.com/your-repo/bookshop-backend.git
    cd bookshop-backend
    ```
-Install Dependencies:
+2.Install Dependencies:
+Install the following packages:
+
+express
+body-parser
+lokijs
+uuid
+dotenv
+
+Install them using:
+```bash
+npm install express body-parser lokijs uuid dotenv
+ ```
+or
 
 Install the required Node.js packages:
 
  ```bash
 npm install
  ```
-Set Up Environment Variables:
+3.Set Up Environment Variables:
 
 Create a .env file in the root of the project and add the following variables:
 
@@ -37,7 +50,7 @@ Create a .env file in the root of the project and add the following variables:
 PORT=3000
 ```
 
-Start the Application:
+4.Start the Application:
 
 To start the application, run the following command:
 
@@ -82,7 +95,21 @@ Response:
   }
 ]
 ```
-3. Update a Book
+3. Get a specific book.
+URL: GET /api/books/:id
+Response:
+
+```json
+{
+    "id": "unique-id",
+    "title": "Book Title",
+    "author": "Author Name",
+    "stock": 10
+}
+
+```
+
+4. Update a Book
 URL: PUT /api/books/:id
 Payload:
 
@@ -101,8 +128,8 @@ Response:
   "stock": 15
 }
 ```
-4. Buy a Book
-URL: POST /api/books/:id/buy
+5. Buy a Book
+URL: POST /api/books/buy/:id
 Payload:
 
 ```json
@@ -117,31 +144,16 @@ Response:
   "id": "unique-id",
   "title": "Book Title",
   "author": "Author Name",
-  "stock": 8
+  "stock": 13
 }
 ```
-5. Buy a Book
-Endpoint: POST /api/books/buy/:id
 
-Description: Buy a book and reduce its stock by 1.
-
-Parameters:
-
-id: Book ID (integer)
-Response:
-
-```json
-{
-  "message": "Book purchased successfully!",
-  "remainingStock": 49
-}
-```
 Testing the API
 You can test the API using Postman or any other API testing tool:
 ```
+POST /api/books/register to add a new book.
 GET /api/books to retrieve all books.
 GET /api/books/:id to retrieve a specific book by ID.
-POST /api/books to add a new book.
 PUT /api/books/:id to update book details.
 POST /api/books/buy/:id to simulate buying a book.
 ```
@@ -153,3 +165,15 @@ If an error occurs during an API request, you will receive a JSON response with 
   "error": "Error message"
 }
 ```
+Development
+For development, use nodemon for hot-reloading:
+```bash
+npm install --save-dev nodemon
+```
+Run with:
+```bash
+npm run dev
+```
+
+License
+This project is licensed under the MIT License.

@@ -15,6 +15,12 @@ exports.getBooks = async () => {
     return booksCollection.find();
 };
 
+exports.getBookById = async (id) => {
+    const book = booksCollection.findOne({ id });
+    return book; // Returns `null` if no book is found
+};
+
+
 exports.updateBook = async (id, updateData) => {
     const book = booksCollection.findOne({ id });
     if (!book) {
