@@ -5,6 +5,7 @@ A simple Node.js backend for a bookshop application using LokiJS as an in-memory
 ## Features
 - Register a book with title, author, and stock.
 - Retrieve all books.
+- Retrieve a specific books.
 - Update book details.
 - Deduct stock when books are purchased.
 
