@@ -1,5 +1,5 @@
 const booksCollection = require('../database');
-const Book = require('../models/book');
+const Book = require('../models/bookModel');
 
 exports.registerBook = async (bookData) => {
     try {
