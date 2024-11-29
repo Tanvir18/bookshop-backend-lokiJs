@@ -1,5 +1,6 @@
 const booksService = require('../services/booksService');
 
+//register a book
 exports.registerBook = async (req, res) => {
     try {
         const book = await booksService.registerBook(req.body);
@@ -9,6 +10,7 @@ exports.registerBook = async (req, res) => {
     }
 };
 
+//get all books
 exports.getBooks = async (req, res) => {
     try {
         const books = await booksService.getBooks();
@@ -18,6 +20,7 @@ exports.getBooks = async (req, res) => {
     }
 };
 
+//get a specific book
 exports.getBookById = async (req, res) => {
     try {
         const book = await booksService.getBookById(req.params.id);
@@ -30,7 +33,7 @@ exports.getBookById = async (req, res) => {
     }
 };
 
-
+//update book
 exports.updateBook = async (req, res) => {
     try {
         const book = await booksService.updateBook(req.params.id, req.body);
@@ -40,6 +43,7 @@ exports.updateBook = async (req, res) => {
     }
 };
 
+//buy book
 exports.buyBook = async (req, res) => {
     try {
         const book = await booksService.buyBook(req.params.id, req.body.quantity || 1);

@@ -20,8 +20,8 @@ A simple Node.js backend for a bookshop application using LokiJS as an in-memory
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/bookshop-backend.git
-   cd bookshop-backend
+   git clone https://github.com/Tanvir18/bookshop-backend-lokiJs.git
+   cd bookshop-backend-lokiJs
    ```
 2.Install Dependencies:
 Install the following packages:

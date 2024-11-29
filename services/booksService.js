@@ -1,6 +1,7 @@
 const booksCollection = require('../database');
 const Book = require('../models/bookModel');
 
+//register book
 exports.registerBook = async (bookData) => {
     try {
         const book = new Book(bookData); // Use the Book model to create a new book
@@ -11,16 +12,18 @@ exports.registerBook = async (bookData) => {
     }
 };
 
+//get all books
 exports.getBooks = async () => {
     return booksCollection.find();
 };
 
+//get a specific book
 exports.getBookById = async (id) => {
     const book = booksCollection.findOne({ id });
     return book; // Returns `null` if no book is found
 };
 
-
+//update book
 exports.updateBook = async (id, updateData) => {
     const book = booksCollection.findOne({ id });
     if (!book) {
@@ -31,6 +34,7 @@ exports.updateBook = async (id, updateData) => {
     return book;
 };
 
+//buy book
 exports.buyBook = async (id, quantity) => {
     const book = booksCollection.findOne({ id });
     if (!book) {
